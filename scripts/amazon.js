@@ -21,7 +21,7 @@ products.forEach((product) => {
       </div>
 
       <div class="product-price">
-        // toFixed(2) is a method that makes it have two decimal places
+        <!-- toFixed(2) is a method that makes it have two decimal places -->
         $${(product.priceCents / 100).toFixed(2)}
       </div>
 
