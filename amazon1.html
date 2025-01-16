@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Amazon Project</title>
+        <style>
+            /*
+            div {
+                border: 1px solid black;
+            } */
+            header {
+                display: flex;
+                align-items: center;
+                background-color: black;
+                height: 60px;
+                padding-left: 15px;
+                padding-right: 15px;
+                color: white;
+
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .amazon-left-header {
+                width: 180px;
+                max-width: 850px;
+            }
+
+            .amazon-logo-icon {
+               width: 100px;
+               margin-top: 5px;
+            }
+
+            .amazon-middle-header {
+                display: flex;
+                flex: 1;
+                margin-left: 10px;
+                margin-right: 10px;
+                max-width: 850px;
+            }
+            .search-bar {
+                display: flex;
+                flex: 1;
+                font-size: 16px;
+                height: 38px;
+                border: none;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                padding-left: 15px;
+            }
+
+            .search-button {
+                background-color: rgb(254, 189, 105);
+                border: none;
+                cursor: pointer;
+            }
+
+            .search-icon {
+                height: 22px;
+                margin-left: 2px;
+                margin-top: 3px;
+
+            }
+
+            .amazon-right-header {
+                display: flex;
+                width: 180px;
+                justify-content: end;
+            }
+
+            .cart-link {
+                color: white;
+                display: flex;
+                align-items: center;
+                position: relative;
+            }
+            .returns-text {
+                display: block;
+                font-size: 13px;
+            }
+            .orders-text {
+                display: block;
+                font-size: 15px;
+                font-weight: 700;
+            }
+
+            .cart-icon {
+                width: 50px;
+            }
+
+            .cart-text {
+                margin-top: 12px;
+                font-size: 15px;
+                font-weight: 700px;
+            }
+
+            .cart-quantity {
+                position: absolute;
+                color: orange;
+                font-weight: 700;
+                font-size: 16px;
+
+                left: 22px;
+                top: -1px;
+                text-align: center;
+                width: 15px;
+            }
+
+            .products-grid {
+                margin-top: 60px;
+            }
+
+            .product-container {
+                padding: 18px;
+            }
+
+            .product-image {
+                height: 180px;
+            }
+
+            .main {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                font-family: Arial;
+            }
+
+            .products-grid {
+                margin-right: 5px;
+                padding: 20px;
+                border-right: 1px solid rgb(231, 231, 231);
+                border-bottom: 1px solid rgb(231, 231, 231);
+            }
+
+            .product-rating-stars {
+                height: 20px;
+            }
+
+            .ratings-container {
+                display: flex;
+            }
+
+            .ratings-count {
+                margin-top: 3px;
+                margin-left: 5px;
+            }
+
+            .product-price {
+                margin-top: 0px;
+                font-weight: 700;
+            }
+
+            .quantities {
+                background-color: rgb(240, 240, 240);
+                padding: 4px;
+                border-radius: 8px;
+                border: 1px solid rgb(240, 240, 240);
+                margin-bottom: 35px;
+            }
+
+            .add-to-cart-button {
+                background-color: rgb(255, 216, 20);
+                padding: 10px 50px;
+                border-radius: 50px;
+                border: none;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="amazon-header">
+            <div class="amazon-left-header">
+                <img class="amazon-logo-icon" src="images/amazon-logo-white.png">
+            </div>
+
+            <div class="amazon-middle-header">
+                <input class="search-bar" placeholder="Search">
+                <button class="search-button">
+                    <img class="search-icon" src="images/icons/search-icon.png">
+                </button>
+            </div>
+
+            <div class="amazon-right-header">
+                <div>
+                <span class="returns-text">Returns</span>
+                <span class="orders-text">& Orders</span>
+                </div>
+
+                <a class="cart-link header-link" href="checkout.html">
+                    <img class="cart-icon" src="images/icons/cart-icon.png">
+                    <div class="cart-quantity">3</div>
+                    <div class="cart-text">Cart</div>
+                  </a>
+            </div>
+        </header>
+
+        <section class="main">
+        <div class="products-grid">
+            <div class="product-container">
+                <img class="product-image" src="images/products/athletic-cotton-socks-6-pairs.jpg">
+            </div>
+            <div class="product-name">
+                <p>Black and Gray Athletic Cotton Socks - 6 Pairs</p>
+            </div>
+
+            <div class="ratings-container">
+                <img class="product-rating-stars"
+              src="images/ratings/rating-45.png">
+              <p class="ratings-count">87</p>
+            </div>
+
+            <p class="product-price">$10.90</p>
+
+            <div>
+            <select class="quantities">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+            </div>
+
+            <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-container">
+                <img class="product-image" src="images/products/intermediate-composite-basketball.jpg">
+            </div>
+            <div class="product-name">
+                <p>Amazon Basics Intermediate Size Basketball</p>
+            </div>
+
+            <div class="ratings-container">
+                <img class="product-rating-stars"
+              src="images/ratings/rating-45.png">
+              <p class="ratings-count">87</p>
+            </div>
+
+            <p class="product-price">$10.90</p>
+
+            <div>
+            <select class="quantities">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+            </div>
+
+            <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-container">
+                <img class="product-image" src="images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg">
+            </div>
+            <div class="product-name">
+                <p>Adults Plain Cotton T-Shirt - 2 Pack</p>
+            </div>
+
+            <div class="ratings-container">
+                <img class="product-rating-stars"
+              src="images/ratings/rating-45.png">
+              <p class="ratings-count">87</p>
+            </div>
+
+            <p class="product-price">$10.90</p>
+
+            <div>
+            <select class="quantities">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+            </div>
+
+            <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+        </section>
+    </body>
+</html>
