@@ -7,13 +7,13 @@ cart.forEach((item) => {
   let matchingProduct;
 
   products.forEach((product) => {
-    if (item.productId === product.id) {
+    if (product.id === item.productId) {
       return matchingProduct = product;
     }
   });
 
   cartSummaryHTML += `
-  <div class="cart-item-container-${item.productId}">
+  <div class="cart-item-container-${matchingProduct.id}">
     <div class="delivery-date">
         Delivery date: Tuesday, June 21
     </div>
@@ -36,7 +36,7 @@ cart.forEach((item) => {
             <span class="update-quantity-link link-primary">
             Update
             </span>
-            <span class="delete-quantity-link js-delete-quantity-link link-primary" data-product-id="${item.productId}">
+            <span class="delete-quantity-link js-delete-quantity-link link-primary" data-product-id="${matchingProduct.id}">
             Delete
             </span>
         </div>
@@ -47,7 +47,7 @@ cart.forEach((item) => {
             Choose a delivery option:
         </div>
         <div class="delivery-option">
-            <input type="radio" checked
+            <input type="radio"
             class="delivery-option-input"
             name="delivery-option-${matchingProduct.id}">
             <div>
