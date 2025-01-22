@@ -3,6 +3,16 @@ import {products} from '../data/products.js';
 
 let productsHTML = '';
 
+function updateCartQuantity () {
+  let cartQuantity = 0;
+  cart.forEach((item) => {
+    cartQuantity += item.quantity;
+  });
+  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+}
+
+updateCartQuantity();
+
 products.forEach((product) => {
   productsHTML += `
     <div class="product-container">
@@ -58,14 +68,6 @@ products.forEach((product) => {
 });
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
-
-function updateCartQuantity () {
-  let cartQuantity = 0;
-  cart.forEach((item) => {
-    cartQuantity += item.quantity;
-  });
-  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
-}
 
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
