@@ -34,3 +34,17 @@ export function getCartQuantity () {
   });
   return cartQuantity;
 }
+
+export function updateDeliveryOption(productId, deliveryOption) {
+  let matchingItem;
+
+  cart.forEach((item) => {
+    if (productId === item.productId) {
+      matchingItem = item;
+    }
+  });
+
+  matchingItem.deliveryOptions = deliveryOption;
+  console.log(matchingItem);
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
