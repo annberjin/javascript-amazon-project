@@ -45,6 +45,5 @@ export function updateDeliveryOption(productId, deliveryOption) {
   });
 
   matchingItem.deliveryOptions = deliveryOption;
-  console.log(matchingItem);
   localStorage.setItem('cart', JSON.stringify(cart));
 }
