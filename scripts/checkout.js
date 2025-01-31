@@ -74,20 +74,21 @@ function deliveryOptionsHTML(matchingProduct, item) {
     const formattedDate = deliveryDate.format('dddd, MMMM D');
     const isChecked = option.id === item.deliveryOptions;
     html += `
-    <div class="delivery-option"
+    <div class="delivery-option js-delivery-option"
          data-product-id="${matchingProduct.id}"
          data-option-id="${option.id}">
-      <input type="radio"
-      ${isChecked ? 'checked' : ''}
-      class="delivery-option-input"
-      name="delivery-option-${matchingProduct.id}">
+        <input type="radio"
+        ${isChecked ? 'checked' : ''}
+        class="delivery-option-input"
+        name="delivery-option-${matchingProduct.id}">
       <div>
-      <div class="delivery-option-date">
+        <div class="delivery-option-date">
           ${formattedDate}
-      </div>
-      <div class="delivery-option-price">
-          ${option.priceCents===0?'FREE shipping' : `$${(option.priceCents/100).toFixed(2)} - Shipping`}
-      </div>
+        </div>
+
+        <div class="delivery-option-price">
+            ${option.priceCents===0?'FREE shipping' : `$${(option.priceCents/100).toFixed(2)} - Shipping`}
+        </div>
       </div>
     </div>
     `
@@ -110,3 +111,11 @@ document.querySelectorAll('.js-delete-quantity-link').forEach((link) => {
 });
 
 document.querySelector('.js-return-to-home-link').innerHTML = `${getCartQuantity()} items`;
+
+document.querySelectorAll('.js-delivery-option').forEach((element) => {
+  element.addEventListener('click', () => {
+    const productId = element.dataset.productId;
+    const deliveryOptionId = element.dataset.optionId;
+    updateDeliveryOption(productId, deliveryOptionId);
+  });
+});
